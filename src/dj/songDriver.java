@@ -15,12 +15,12 @@ public class songDriver {
 	   static SongPlaylist list = new SongPlaylist();
 	   public static void main(String[] args) throws IOException {
 		   
-	       String[] file = { "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-2020-10-09--2020-10-16.csv",
-	               "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-2020-10-16--2020-10-23.csv",
-	               "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-2020-10-23--2020-10-30.csv",
-	               "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-latest.csv" };
+		   String[] file = { "regional-global-weekly-2020-10-09--2020-10-16.csv",
+	               "regional-global-weekly-2020-10-16--2020-10-23.csv",
+	               "regional-global-weekly-2020-10-23--2020-10-30.csv",
+	               "regional-global-weekly-latest.csv" };
 	       
-	       PrintStream outputStream = new PrintStream("charts.txt");
+	       PrintStream outputStream = new PrintStream("lab5.txt");
 	       System.setOut(outputStream);
 	       ArrayList<String> songList = new ArrayList<>(); 
 	       ArrayList<String> artistList = new ArrayList<>(); 
@@ -28,12 +28,18 @@ public class songDriver {
 	       for (String a : file) {
 	           FileInputStream inputStream = new FileInputStream(a); 
 	           Scanner sc = new Scanner(inputStream); 
+	           sc.nextLine();
+	           sc.nextLine();
 	           while (sc.hasNext()) { 
-	               String line = sc.next();
+	               String line = sc.nextLine();
+//	               System.out.println("Input: "+ line);
 	               String[] array = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 	               if (array.length > 1) { 
 	                   for (int i = 0; i < array.length; i++) {
-	                       if (array[i].charAt(6) == '"') { 
+//	                	   System.out.println("Array i "+i + ": has length " + array[i].length()+ " = "+ array[i]);
+	                	   if(array[i].length()<=0)
+	                		   continue;
+	                       if (array[i].charAt(0) == '"') { 
 	                           array[i] = array[i].substring(1, array[i].length() - 1);
 	                       }
 	                   }

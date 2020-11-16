@@ -5,8 +5,8 @@ public class Song implements Comparable<Song> {
 	public String artistName;
 	public int artistAverage;
 	public int streamCount;
-	public Song left =  null;
-	public Song right = null;
+	public Song left ;
+	public Song right ;
 
 	public Song(String songTitle, String artistName, int streamCount) {
 	       this.songTitle = songTitle;
