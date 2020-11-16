@@ -1,0 +1,5 @@
+Enter assigned grade 1:
+Enter assigned grade 2:
+Enter assigned grade 3:
+Enter assigned grade 4:
+My grade is: D

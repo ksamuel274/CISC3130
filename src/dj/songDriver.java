@@ -20,7 +20,7 @@ public class songDriver {
 	               "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-2020-10-23--2020-10-30.csv",
 	               "/Users/king/Documents/FW20/CISC3130/regional-global-weekly-latest.csv" };
 	       
-	       PrintStream outputStream = new PrintStream("lab5.txt");
+	       PrintStream outputStream = new PrintStream("charts.txt");
 	       System.setOut(outputStream);
 	       ArrayList<String> songList = new ArrayList<>(); 
 	       ArrayList<String> artistList = new ArrayList<>(); 
@@ -33,7 +33,7 @@ public class songDriver {
 	               String[] array = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 	               if (array.length > 1) { 
 	                   for (int i = 0; i < array.length; i++) {
-	                       if (array[i].charAt(0) == '"') { 
+	                       if (array[i].charAt(6) == '"') { 
 	                           array[i] = array[i].substring(1, array[i].length() - 1);
 	                       }
 	                   }
